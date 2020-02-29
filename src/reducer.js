@@ -11,7 +11,7 @@ const initialState = {
   error: null,
   cardList: [],
   detailsItem: {},
-  location: 'Ban', // ask for current location
+  location: 1, // ask for current location
 };
 
 const rootState = (state = initialState, {type, payload}) => {
