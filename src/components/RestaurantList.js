@@ -9,14 +9,15 @@ export class RestaurantList extends Component {
     this.props.fetchRestaurants();
   }
 
-  getParsedData(list) {
-    return list.map(item => {
-      return {
-        name: item.restaurant.name,
-        location: item.restaurant.name,
-      };
-    });
-  }
+  // getParsedData(list) {
+  //   return list.map(item => {
+  //     return {
+  //       name: item.name,
+  //       location: item.locality,
+  //       cuisines: item.cuisines,
+  //     };
+  //   });
+  // }
 
   render() {
     console.log('asdasd', this.props.cardList);
@@ -24,11 +25,11 @@ export class RestaurantList extends Component {
     if (cardList.length < 1) {
       return <Text>Loading</Text>;
     }
-    const a = this.getParsedData(cardList);
-    console.log('a', a);
+    // const a = this.getParsedData(cardList);
+    // console.log('a', a);
     return (
       <FlatList
-        data={a}
+        data={cardList}
         renderItem={({item}) => <RestaurantItem item={item} />}
       />
     );
@@ -40,6 +41,7 @@ const RestaurantItem = ({item}) => {
     <View style={styles.listItem}>
       <Text>{item.name}</Text>
       <Text>{item.location}</Text>
+      <Text>{item.cuisines}</Text>
     </View>
   );
 };
