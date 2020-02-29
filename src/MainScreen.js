@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import RestarantLists from './RestaurantList';
-import Location from './Location';
 import {View, StyleSheet} from 'react-native';
+
+import RestarantLists from './components/RestaurantList';
+import Location from './components/Location';
+import DetailsDialog from './components/DetailsDialog';
 
 class MainScreen extends Component {
   render() {
     return (
       <View style={styles.card}>
-        <Location />
-        <RestarantLists />
+        {this.props.detailsItem === null ? (
+          <>
+            <Location />
+            <RestarantLists />
+          </>
+        ) : (
+          <DetailsDialog />
+        )}
       </View>
     );
   }
@@ -22,9 +30,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = ({cardsList, location}) => ({
+const mapStateToProps = ({cardsList, location, detailsItem}) => ({
   cardsList,
   location,
+  detailsItem,
 });
 
 const mapDispatchToProps = dispatch => ({

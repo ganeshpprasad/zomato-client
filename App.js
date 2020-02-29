@@ -9,7 +9,7 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 
-import MainScreen from './src/components/MainScreen';
+import MainScreen from './src/MainScreen';
 
 const App = () => {
   return (
