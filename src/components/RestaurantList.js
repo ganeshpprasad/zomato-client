@@ -6,7 +6,6 @@ import fetchRestaurantsAction from '../actions/fetchRestaurants';
 
 export class RestaurantList extends Component {
   componentWillMount() {
-    console.log('mount', this.props.location);
     this.props.fetchRestaurants(this.props.location);
   }
 

@@ -19,7 +19,7 @@ export class Location extends Component {
     return (
       <Picker
         selectedValue={this.props.location}
-        style={{height: 50, width: 100}}
+        style={{height: 50, width: 200}}
         onValueChange={itemValue => this.updateLocation(itemValue)}>
         <Picker.Item label="Delhi" value="1" />
         <Picker.Item label="Kolkata" value="2" />
