@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Text} from 'react-native';
 import {connect} from 'react-redux';
 import {updateAction} from '../actions';
+import RestarantLists from './RestaurantList';
 
 class MainScreen extends Component {
   updateLocation() {
@@ -11,7 +12,12 @@ class MainScreen extends Component {
   render() {
     const a = this.props.location;
     this.updateLocation();
-    return <Text>location: {a}</Text>;
+    return (
+      <>
+        <Text>location: {a}</Text>
+        <RestarantLists />
+      </>
+    );
   }
 }
 
